@@ -7,11 +7,11 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class PlantaService {
+export class DocumentsService {
   dataCollection: AngularFirestoreCollection<any>;
 
   constructor(private firestore: AngularFirestore) {
-    this.dataCollection = firestore.collection<any>("plantas");
+    this.dataCollection = firestore.collection<any>("documentos");
   }
 
   getPlantas(): any {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlantaService } from '../../services/plantas/planta.service'
+import { DocumentsService } from '../../services/documents/documents.service'
 
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ export class VistaListaPlantasComponent implements OnInit {
 
   plantas$: Observable<any[]>;
 
-  constructor(private plantaService: PlantaService) { }
+  constructor(private plantaService: DocumentsService) { }
 
   ngOnInit(): void {
     this.plantas$ = this.plantaService.getPlantas();

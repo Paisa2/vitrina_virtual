@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
+
  @Injectable({
    providedIn: 'root'
  })
@@ -11,14 +12,14 @@ export class UsuarioServiceService {
   }
 
   getUsers(): any{
-    return this.firestore.collection('users').snapshotChanges();
+    return this.firestore.collection('admin').snapshotChanges();
   }
 
-  createUsers(users: any): any{
-    this.firestore.collection('users').add(users);
+  createUsers(admis: any): any{
+    this.firestore.collection('admin').add(admis);
   }
 
   deleteUser(id: any): any{
-    this.firestore.collection('users').doc(id).delete();
+    this.firestore.collection('admin').doc(id).delete();
   }
 }
